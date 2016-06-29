@@ -4,6 +4,7 @@ from BaseHandler import Handler
 from FormHandler import FormHandler
 from FormVerifiedHandler import FormVerifiedHandler
 from LoginHandler import LoginHandler
+from LogoutHandler import LogoutHandler
 
 
 class MainPage(Handler):
@@ -23,4 +24,5 @@ class MainPage(Handler):
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/signup', FormHandler),
                                ('/welcome', FormVerifiedHandler),
-                               ('/login', LoginHandler)], debug=True)
+                               ('/login', LoginHandler),
+                               ('/logout', LogoutHandler)], debug=True)
