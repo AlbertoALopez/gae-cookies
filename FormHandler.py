@@ -35,10 +35,10 @@ class FormHandler(Handler):
         self.user_email = self.request.get("email")
 
         # Error messages
-        username_error = "" if self.valid_username(self.user_name) else "Please enter a valid username."
-        password_error = "" if self.valid_password(self.user_password) else "Please enter a valid password."
-        verify_error = "" if self.verify_password(self.user_password, user_verify) else "Your passwords do not match."
-        email_error = "" if self.valid_email(user_email) else "That's not a valid email."
+        username_error = "" if valid_username(self.user_name) else "Please enter a valid username."
+        password_error = "" if valid_password(self.user_password) else "Please enter a valid password."
+        verify_error = "" if verify_password(self.user_password, self.user_verify) else "Your passwords do not match."
+        email_error = "" if valid_email(self.user_email) else "That's not a valid email."
         # If there are no error messages
         if username_error == "" and password_error == "" and verify_error == "":
             # Call method done() and redirect to welcome
