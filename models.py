@@ -33,6 +33,6 @@ class User(ndb.Model):
 
     @classmethod
     def user_login(CLS, name, password):
-        user = CLS.get_by_name(name)
+        user = CLS.get_user_by_name(name)
         if user and valid_pw(name, password, user.hashed_pw):
             return user

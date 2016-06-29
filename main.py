@@ -2,7 +2,8 @@
 import webapp2
 from BaseHandler import Handler
 from FormHandler import FormHandler
-from FormVerifiedHandler import FormVerified
+from FormVerifiedHandler import FormVerifiedHandler
+from LoginHandler import LoginHandler
 
 
 class MainPage(Handler):
@@ -21,4 +22,5 @@ class MainPage(Handler):
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/signup', FormHandler),
-                               ('/welcome', FormVerified)], debug=True)
+                               ('/welcome', FormVerifiedHandler),
+                               ('/login', LoginHandler)], debug=True)
